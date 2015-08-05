@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Tasks App</h1>
+
+        <input type="text"
+               class="form-control"
+               placeholder="New Task"
+               v-model="newTask.title"
+               v-on="keyup: pressedEnter | key 'enter'"
+        >
+
+        <ul class="list-group">
+          <li class="list-group-item task"
+              v-repeat="task : tasks"
+              v-class="completed: task.completed"
+              v-on="dblclick: startEditingTask(task)"
+          >
+            <input type="checkbox" v-model="task.completed">
+              {{ task.title }}
+              <button class="remove-btn pull-right" v-on="click: removeTask(task)"><span class="glyphicon glyphicon-remove"></span></button>
+          </li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.9/vue.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

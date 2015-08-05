@@ -1,0 +1,27 @@
+#app {
+    padding: 2em;
+}
+
+#app input[type=text] {
+    margin-bottom: 1em
+}
+
+#app h1 {
+    margin-bottom: 0.5em;
+}
+
+.task:hover .remove-btn {
+    display: block;
+}
+
+.remove-btn {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: darkred;
+}
+
+.completed {
+    color: silver;
+    text-decoration: line-through;
+}
